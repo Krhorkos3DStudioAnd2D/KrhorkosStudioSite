@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es-MX" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krhorkos3DStudioAnd2D | Desarrollo de Videojuegos 2D y 3D</title>
+    <meta name="description" content="Sitio oficial de Krhorkos3DStudioAnd2D. Soy un desarrollador independiente en México creando mundos interactivos en 2D y 3D con Godot y Blender.">
+    <meta name="keywords" content="desarrollo de videojuegos, Godot, Blender, creación de juegos, México, estudio independiente, videojuegos 2D, videojuegos 3D">
+    <meta name="author" content="Krhorkos3DStudioAnd2D">
+    <meta name="language" content="es-MX">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Krhorkos3DStudioAnd2D",
+      "url": "URL_REAL_AQUI",
+      "logo": "LOGO_AQUI",
+      "description": "Estudio independiente de desarrollo de videojuegos 2D y 3D en México.",
+      "founder": {
+        "@type": "Person",
+        "name": "Oscar Alejandro"
+      },
+      "sameAs": [
+        "https://www.instagram.com/krhorkos3dstudioand2d/",
+        "https://x.com/krhorkos3DAnd2D",
+        "https://www.youtube.com/@Krhorkos3DStudioAnd2D-b6g",
+        "https://alex293517.itch.io/"
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Definición de temas personalizados para el selector de 7 temas */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.theme-dark {
+            --bg-gradient: linear-gradient(135deg, #090d16 0%, #111827 100%);
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.theme-light {
+            --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.theme-grayscale {
+            --bg-gradient: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+            --card-bg: rgba(39, 39, 42, 0.8);
+            --text-main: #fafafa;
+            --text-muted: #a1a1aa;
+            --accent-color: #71717a;
+            --accent-hover: #52525b;
+            --border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        body.theme-creative {
+            --bg-gradient: linear-gradient(135deg, #2e1065 0%, #701a75 100%);
+            --card-bg: rgba(46, 16, 101, 0.6);
+            --text-main: #fae8ff;
+            --text-muted: #d8b4fe;
+            --accent-color: #ec4899;
+            --accent-hover: #db2777;
+            --border-color: rgba(236, 72, 153, 0.25);
+        }
+
+        body.theme-earth {
+            --bg-gradient: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+            --card-bg: rgba(41, 37, 36, 0.85);
+            --text-main: #f5f5f4;
+            --text-muted: #a8a29e;
+            --accent-color: #d97706;
+            --accent-hover: #b45309;
+            --border-color: rgba(217, 119, 6, 0.2);
+        }
+
+        body.theme-tech {
+            --bg-gradient: linear-gradient(135deg, #02233b 0%, #042f4e 100%);
+            --card-bg: rgba(6, 78, 116, 0.4);
+            --text-main: #e0f2fe;
+            --text-muted: #7dd3fc;
+            --accent-color: #0ea5e9;
+            --accent-hover: #0284c7;
+            --border-color: rgba(14, 165, 233, 0.3);
+        }
+
+        body.theme-neon {
+            --bg-gradient: linear-gradient(135deg, #050505 0%, #180324 100%);
+            --card-bg: rgba(24, 3, 36, 0.7);
+            --text-main: #ffffff;
+            --text-muted: #f472b6;
+            --accent-color: #c084fc;
+            --accent-hover: #a855f7;
+            --border-color: rgba(192, 132, 252, 0.4);
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            transition: background 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        .custom-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+
+        .custom-btn {
+            background-color: var(--accent-color);
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .custom-btn:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.03);
+        }
+
+        /* Fondo con animación suave */
+        .animated-bg-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+            animation: floatCircle 20s infinite alternate ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            top: -100px;
+            left: -100px;
+            animation-duration: 25s;
+        }
+
+        .circle:nth-child(2) {
+            width: 600px;
+            height: 600px;
+            bottom: -150px;
+            right: -150px;
+            animation-duration: 30s;
+            animation-delay: -5s;
+        }
+
+        @keyframes floatCircle {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, 80px) scale(1.1); }
+            100% { transform: translate(-30px, 50px) scale(0.95); }
+        }
+
+        /* Animaciones de entrada */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="theme-dark">
+
+    <div class="animated-bg-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-opacity-80 border-b border-white/10" style="background-color: var(--card-bg);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-lg custom-btn">
+                    K
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-wide block">Krhorkos3DStudioAnd2D</span>
+                    <span class="text-xs text-slate-400 block">Estudio Independiente • México</span>
+                </div>
+            </div>
+
+            <!-- Botones de Navegación y Selector de Temas -->
+            <div class="flex items-center space-x-3 sm:space-x-6">
+                <nav class="hidden md:flex items-center space-x-3">
+                    <a href="noticias.html" class="px-4 py-2 rounded-lg text-sm font-medium border border-white/10 hover:border-indigo-500 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <span>Noticias</span>
+                    </a>
+                    <a href="devblogs.html" class="px-4 py-2 rounded-lg text-sm font-medium border border-white/10 hover:border-indigo-500 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Devblogs</span>
+                    </a>
+                </nav>
+
+                <!-- Selector de Temas (7 Temas) -->
+                <div class="relative">
+                    <select id="themeSelector" onchange="cambiarTema(this.value)" class="px-3 py-2 rounded-lg text-sm font-medium border border-white/20 bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer">
+                        <option value="theme-dark" class="bg-slate-900 text-white">1. Modo Oscuro</option>
+                        <option value="theme-light" class="bg-slate-100 text-slate-900">2. Modo Claro</option>
+                        <option value="theme-grayscale" class="bg-zinc-800 text-zinc-100">3. Escala de Grises</option>
+                        <option value="theme-creative" class="bg-purple-950 text-purple-100">4. Creativo</option>
+                        <option value="theme-earth" class="bg-stone-900 text-stone-100">5. Cafe</option>
+                        <option value="theme-tech" class="bg-sky-950 text-sky-100">6. Azul</option>
+                        <option value="theme-neon" class="bg-black text-pink-400">7. Neón</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Navegación móvil rápida -->
+        <div class="md:hidden flex justify-center space-x-4 py-2 border-t border-white/5 bg-black/20">
+            <a href="noticias.html" class="text-xs font-medium px-3 py-1 rounded bg-white/5">Noticias</a>
+            <a href="devblogs.html" class="text-xs font-medium px-3 py-1 rounded bg-white/5">Devblogs</a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-20">
+        
+        <!-- Sección de Presentación / Hero -->
+        <section class="text-center space-y-6 fade-in-up">
+            <div class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-white/20 bg-white/5 mb-2">
+                Desarrollador Independiente • México
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-500">Krhorkos3DStudioAnd2D</span>
+            </h1>
+            <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 leading-relaxed">
+                Trabajo completamente solo desde México, diseñando, y dando vida a mundos interactivos tanto en 2D como en 3D.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="#contacto" class="custom-btn px-8 py-3 rounded-xl font-medium shadow-lg flex items-center space-x-2">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contactarme</span>
+                </a>
+                <a href="#herramientas" class="px-8 py-3 rounded-xl font-medium border border-white/20 hover:bg-white/5 transition-all duration-300">
+                    Ver Herramientas
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de Quién Soy y Herramientas -->
+        <section id="herramientas" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <div class="custom-card p-8 rounded-2xl flex flex-col justify-between fade-in-up delay-1">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Mi Filosofía de Desarrollo</h2>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        Al ser el único responsable de mi estudio, controlo cada aspecto del desarrollo de mis videojuegos. Desde la concepción de la idea inicial hasta el pulido final de la jugabilidad y la atmósfera, invierto mi tiempo y dedicación en ofrecer experiencias memorables y sólidas.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-white/10 flex items-center space-x-4 text-sm text-slate-400">
+                    <span><i class="fa-solid fa-location-dot text-indigo-400 mr-1"></i> México</span>
+                    <span><i class="fa-solid fa-shield-halved text-indigo-400 mr-1"></i> 100% Independiente</span>
+                </div>
+            </div>
+
+            <div class="custom-card p-8 rounded-2xl flex flex-col justify-between fade-in-up delay-2">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Herramientas Principales</h2>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        Para materializar mis proyectos utilizo software potente y versátil que me permite mantener un flujo de trabajo eficiente y de alta calidad técnica:
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl border border-white/10 bg-white/5 flex items-center space-x-3">
+                            <i class="fa-solid fa-cube text-2xl text-cyan-400"></i>
+                            <div>
+                                <h3 class="font-semibold text-sm">Godot Engine</h3>
+                                <p class="text-xs text-slate-400">Motor 2D y 3D</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl border border-white/10 bg-white/5 flex items-center space-x-3">
+                            <i class="fa-solid fa-shapes text-2xl text-orange-400"></i>
+                            <div>
+                                <h3 class="font-semibold text-sm">Blender</h3>
+                                <p class="text-xs text-slate-400">Modelado y Animacion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Redes Sociales -->
+        <section class="fade-in-up delay-3 text-center space-y-8">
+            <div class="max-w-xl mx-auto">
+                <h2 class="text-3xl font-bold mb-3">Sígueme en mis Redes</h2>
+                <p class="text-slate-300 text-sm">Sigo de cerca el avance de mis proyectos y comparto actualizaciones constantes en mis canales oficiales.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="https://www.instagram.com/krhorkos3dstudioand2d/" target="_blank" rel="noopener noreferrer" class="custom-card p-6 rounded-2xl flex items-center space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-500 text-white flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-bold text-sm">Instagram</h3>
+                        <p class="text-xs text-slate-400">Galería</p>
+                    </div>
+                </a>
+
+                <a href="https://x.com/krhorkos3DAnd2D" target="_blank" rel="noopener noreferrer" class="custom-card p-6 rounded-2xl flex items-center space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 text-white flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform border border-white/10">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-bold text-sm">X (Twitter)</h3>
+                        <p class="text-xs text-slate-400">DevBlogs</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/@Krhorkos3DStudioAnd2D-b6g" target="_blank" rel="noopener noreferrer" class="custom-card p-6 rounded-2xl flex items-center space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-red-600 text-white flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-bold text-sm">YouTube</h3>
+                        <p class="text-xs text-slate-400">Devlogs</p>
+                    </div>
+                </a>
+
+                <a href="https://alex293517.itch.io/" target="_blank" rel="noopener noreferrer" class="custom-card p-6 rounded-2xl flex items-center space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-itch-io"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-bold text-sm">Itch.io</h3>
+                        <p class="text-xs text-slate-400">Juegos y Assets</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="custom-card p-8 sm:p-12 rounded-3xl max-w-3xl mx-auto text-center space-y-6 fade-in-up delay-4">
+            <h2 class="text-3xl font-bold">Ponte en Contacto</h2>
+            <p class="text-slate-300 text-sm max-w-lg mx-auto">
+                ¿Tienes alguna consulta sobre mi trabajo, propuestas o simplemente quieres saludar? Escríbeme directamente a mi correo electrónico.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                <div class="px-5 py-3 rounded-xl border border-white/10 bg-black/20 text-sm font-mono tracking-wide select-all">
+                    krhorkos3dstudioand2@gmail.com
+                </div>
+                <button onclick="copiarCorreo()" class="custom-btn px-6 py-3 rounded-xl font-medium text-sm flex items-center space-x-2 shadow-lg">
+                    <i class="fa-solid fa-copy"></i>
+                    <span id="btnCopiarTexto">Copiar Correo</span>
+                </button>
+            </div>
+            <div id="mensajeCopiado" class="hidden text-xs text-emerald-400 font-medium transition-all duration-300">
+                ¡Correo copiado al portapapeles con éxito!
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="border-t border-white/10 mt-20 py-8 text-center text-sm text-slate-400" style="background-color: var(--card-bg);">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p>© <span id="anioActual"></span> Krhorkos3DStudioAnd2D. Todos los derechos reservados.</p>
+            <p class="text-xs text-slate-500">Diseñado y desarrollado en solitario desde México.</p>
+        </div>
+    </footer>
+
+    <script>
+
+        const STORAGE_KEY = 'krhorkos_selected_theme';
+        function cambiarTema(nombreTema) {
+            const temasDisponibles = [
+                'theme-dark', 
+                'theme-light', 
+                'theme-grayscale', 
+                'theme-creative', 
+                'theme-earth', 
+                'theme-tech', 
+                'theme-neon'
+            ];
+
+            temasDisponibles.forEach(tema => {
+                document.body.classList.remove(tema);
+            });
+
+            document.body.classList.add(nombreTema);
+
+            try {
+                localStorage.setItem(STORAGE_KEY, nombreTema);
+            } catch (error) {
+                console.error("No se pudo guardar la preferencia de tema en localStorage:", error);
+            }
+
+            const selector = document.getElementById('themeSelector');
+            if (selector && selector.value !== nombreTema) {
+                selector.value = nombreTema;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const anioSpan = document.getElementById('anioActual');
+            if (anioSpan) {
+                anioSpan.textContent = new Date().getFullYear();
+            }
+
+            let temaGuardado = 'theme-dark';
+            try {
+                const guardado = localStorage.getItem(STORAGE_KEY);
+                if (guardado) {
+                    temaGuardado = guardado;
+                }
+            } catch (error) {
+                console.error("Error al leer localStorage:", error);
+            }
+
+            cambiarTema(temaGuardado);
+        });
+
+        function copiarCorreo() {
+            const correo = "krhorkos3dstudioand2@gmail.com";
+            
+            const textarea = document.createElement("textarea");
+            textarea.value = correo;
+            textarea.style.position = "fixed";
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            
+            try {
+                const exitoso = document.execCommand('copy');
+                const mensaje = document.getElementById('mensajeCopiado');
+                const btnTexto = document.getElementById('btnCopiarTexto');
+                
+                if (exitoso) {
+                    mensaje.classList.remove('hidden');
+                    btnTexto.textContent = "¡Copiado!";
+                    setTimeout(() => {
+                        mensaje.classList.add('hidden');
+                        btnTexto.textContent = "Copiar Correo";
+                    }, 3000);
+                }
+            } catch (err) {
+                console.error("Error al intentar copiar al portapapeles", err);
+            }
+            
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
