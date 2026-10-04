@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krhorkos3DStudioAnd2D | Desarrollo de Videojuegos 2D y 3D</title>
+    <title>Krhorkos3DStudioAnd2D | Sitio Web Oficial</title>
     <link rel="icon" type="image/png" href="LOGO.png">
     <link rel="apple-touch-icon" href="LOGO.png">
     <meta name="description" content="Sitio oficial de Krhorkos3DStudioAnd2D. Soy un desarrollador independiente en México creando mundos interactivos en 2D y 3D con Godot y Blender.">
@@ -50,15 +50,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Definición de temas personalizados para el selector de 7 temas */
+        /* Definición de temas personalizados (Modo Oscuro y Modo Claro mejorado) */
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-color: #3b82f6;
-            --accent-hover: #2563eb;
-            --border-color: rgba(255, 255, 255, 0.1);
+            --bg-gradient: linear-gradient(135deg, #090d16 0%, #111827 100%);
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --border-color: rgba(255, 255, 255, 0.08);
         }
 
         body.theme-dark {
@@ -72,63 +72,13 @@
         }
 
         body.theme-light {
-            --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            --card-bg: rgba(255, 255, 255, 0.85);
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.95);
             --text-main: #0f172a;
-            --text-muted: #64748b;
+            --text-muted: #334155;
             --accent-color: #2563eb;
             --accent-hover: #1d4ed8;
-            --border-color: rgba(0, 0, 0, 0.1);
-        }
-
-        body.theme-grayscale {
-            --bg-gradient: linear-gradient(135deg, #18181b 0%, #27272a 100%);
-            --card-bg: rgba(39, 39, 42, 0.8);
-            --text-main: #fafafa;
-            --text-muted: #a1a1aa;
-            --accent-color: #71717a;
-            --accent-hover: #52525b;
-            --border-color: rgba(255, 255, 255, 0.15);
-        }
-
-        body.theme-creative {
-            --bg-gradient: linear-gradient(135deg, #2e1065 0%, #701a75 100%);
-            --card-bg: rgba(46, 16, 101, 0.6);
-            --text-main: #fae8ff;
-            --text-muted: #d8b4fe;
-            --accent-color: #ec4899;
-            --accent-hover: #db2777;
-            --border-color: rgba(236, 72, 153, 0.25);
-        }
-
-        body.theme-earth {
-            --bg-gradient: linear-gradient(135deg, #1c1917 0%, #292524 100%);
-            --card-bg: rgba(41, 37, 36, 0.85);
-            --text-main: #f5f5f4;
-            --text-muted: #a8a29e;
-            --accent-color: #d97706;
-            --accent-hover: #b45309;
-            --border-color: rgba(217, 119, 6, 0.2);
-        }
-
-        body.theme-tech {
-            --bg-gradient: linear-gradient(135deg, #02233b 0%, #042f4e 100%);
-            --card-bg: rgba(6, 78, 116, 0.4);
-            --text-main: #e0f2fe;
-            --text-muted: #7dd3fc;
-            --accent-color: #0ea5e9;
-            --accent-hover: #0284c7;
-            --border-color: rgba(14, 165, 233, 0.3);
-        }
-
-        body.theme-neon {
-            --bg-gradient: linear-gradient(135deg, #050505 0%, #180324 100%);
-            --card-bg: rgba(24, 3, 36, 0.7);
-            --text-main: #ffffff;
-            --text-muted: #f472b6;
-            --accent-color: #c084fc;
-            --accent-hover: #a855f7;
-            --border-color: rgba(192, 132, 252, 0.4);
+            --border-color: rgba(15, 23, 42, 0.15);
         }
 
         body {
@@ -149,7 +99,7 @@
 
         .custom-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15);
             border-color: var(--accent-color);
         }
 
@@ -233,49 +183,49 @@
         <div class="circle"></div>
     </div>
 
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-opacity-80 border-b border-white/10" style="background-color: var(--card-bg);">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-opacity-80 border-b" style="background-color: var(--card-bg); border-color: var(--border-color);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-lg custom-btn">
-                    K
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden shadow-lg border" style="border-color: var(--border-color);">
+                    <img src="LOGO.png" alt="Logo Krhorkos3DStudioAnd2D" class="w-full h-full object-cover">
                 </div>
                 <div>
-                    <span class="font-bold text-lg tracking-wide block">Krhorkos3DStudioAnd2D</span>
-                    <span class="text-xs text-slate-400 block">Estudio Independiente • México</span>
+                    <span class="font-bold text-lg tracking-wide block" style="color: var(--text-main);">Krhorkos3DStudioAnd2D</span>
+                    <span class="text-xs block" style="color: var(--text-muted);">Estudio Independiente • México</span>
                 </div>
             </div>
 
             <!-- Botones de Navegación y Selector de Temas -->
-            <div class="flex items-center space-x-3 sm:space-x-6">
-                <nav class="hidden md:flex items-center space-x-3">
-                    <a href="noticias.html" class="px-4 py-2 rounded-lg text-sm font-medium border border-white/10 hover:border-indigo-500 transition-all duration-300 flex items-center space-x-2">
-                        <i class="fa-solid fa-newspaper"></i>
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <nav class="hidden md:flex items-center space-x-2">
+                    <a href="noticias.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5" style="border-color: var(--border-color); color: var(--text-main);">
+                        <i class="fa-solid fa-newspaper text-indigo-500"></i>
                         <span>Noticias</span>
                     </a>
-                    <a href="devblogs.html" class="px-4 py-2 rounded-lg text-sm font-medium border border-white/10 hover:border-indigo-500 transition-all duration-300 flex items-center space-x-2">
-                        <i class="fa-solid fa-code"></i>
+                    <a href="devblogs.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5" style="border-color: var(--border-color); color: var(--text-main);">
+                        <i class="fa-solid fa-code text-indigo-500"></i>
                         <span>Devblogs</span>
+                    </a>
+                    <a href="fundador.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5" style="border-color: var(--border-color); color: var(--text-main);">
+                        <i class="fa-solid fa-user-tie text-indigo-500"></i>
+                        <span>Sobre el Fundador</span>
                     </a>
                 </nav>
 
-                <!-- Selector de Temas (7 Temas) -->
+                <!-- Selector de Temas (Modo Oscuro / Modo Claro) -->
                 <div class="relative">
-                    <select id="themeSelector" onchange="cambiarTema(this.value)" class="px-3 py-2 rounded-lg text-sm font-medium border border-white/20 bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer">
-                        <option value="theme-dark" class="bg-slate-900 text-white">1. Modo Oscuro</option>
-                        <option value="theme-light" class="bg-slate-100 text-slate-900">2. Modo Claro</option>
-                        <option value="theme-grayscale" class="bg-zinc-800 text-zinc-100">3. Escala de Grises</option>
-                        <option value="theme-creative" class="bg-purple-950 text-purple-100">4. Creativo</option>
-                        <option value="theme-earth" class="bg-stone-900 text-stone-100">5. Cafe</option>
-                        <option value="theme-tech" class="bg-sky-950 text-sky-100">6. Azul</option>
-                        <option value="theme-neon" class="bg-black text-pink-400">7. Neón</option>
+                    <select id="themeSelector" onchange="cambiarTema(this.value)" class="px-3 py-2 rounded-lg text-sm font-medium border bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer" style="border-color: var(--border-color); color: var(--text-main);">
+                        <option value="theme-dark" class="bg-slate-900 text-white">Modo Oscuro</option>
+                        <option value="theme-light" class="bg-slate-100 text-slate-900">Modo Claro</option>
                     </select>
                 </div>
             </div>
         </div>
         <!-- Navegación móvil rápida -->
-        <div class="md:hidden flex justify-center space-x-4 py-2 border-t border-white/5 bg-black/20">
-            <a href="noticias.html" class="text-xs font-medium px-3 py-1 rounded bg-white/5">Noticias</a>
-            <a href="devblogs.html" class="text-xs font-medium px-3 py-1 rounded bg-white/5">Devblogs</a>
+        <div class="md:hidden flex justify-center space-x-2 py-2 border-t bg-black/5" style="border-color: var(--border-color);">
+            <a href="noticias.html" class="text-xs font-medium px-2.5 py-1 rounded border" style="border-color: var(--border-color); color: var(--text-main);">Noticias</a>
+            <a href="devblogs.html" class="text-xs font-medium px-2.5 py-1 rounded border" style="border-color: var(--border-color); color: var(--text-main);">Devblogs</a>
+            <a href="fundador.html" class="text-xs font-medium px-2.5 py-1 rounded border" style="border-color: var(--border-color); color: var(--text-main);">Fundador</a>
         </div>
     </header>
 
@@ -283,21 +233,21 @@
         
         <!-- Sección de Presentación / Hero -->
         <section class="text-center space-y-6 fade-in-up">
-            <div class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-white/20 bg-white/5 mb-2">
+            <div class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase border bg-white/5 mb-2" style="border-color: var(--border-color); color: var(--text-muted);">
                 Desarrollador Independiente • México
             </div>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-500">Krhorkos3DStudioAnd2D</span>
             </h1>
-            <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 leading-relaxed">
-                Trabajo completamente solo desde México, diseñando, y dando vida a mundos interactivos tanto en 2D como en 3D.
+            <p class="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed" style="color: var(--text-muted);">
+                Trabajo completamente solo desde México, diseñando, y dando vida a mundos interactivos en 3D.
             </p>
             <div class="flex flex-wrap justify-center gap-4 pt-4">
                 <a href="#contacto" class="custom-btn px-8 py-3 rounded-xl font-medium shadow-lg flex items-center space-x-2">
                     <i class="fa-solid fa-envelope"></i>
                     <span>Contactarme</span>
                 </a>
-                <a href="#herramientas" class="px-8 py-3 rounded-xl font-medium border border-white/20 hover:bg-white/5 transition-all duration-300">
+                <a href="#herramientas" class="px-8 py-3 rounded-xl font-medium border hover:bg-white/5 transition-all duration-300" style="border-color: var(--border-color); color: var(--text-main);">
                     Ver Herramientas
                 </a>
             </div>
@@ -307,42 +257,42 @@
         <section id="herramientas" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             <div class="custom-card p-8 rounded-2xl flex flex-col justify-between fade-in-up delay-1">
                 <div>
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-500 flex items-center justify-center text-xl mb-6">
                         <i class="fa-solid fa-user-gear"></i>
                     </div>
-                    <h2 class="text-2xl font-bold mb-4">Mi Filosofía de Desarrollo</h2>
-                    <p class="text-slate-300 leading-relaxed mb-6">
+                    <h2 class="text-2xl font-bold mb-4" style="color: var(--text-main);">Mi Filosofía de Desarrollo</h2>
+                    <p class="leading-relaxed mb-6" style="color: var(--text-muted);">
                         Al ser el único responsable de mi estudio, controlo cada aspecto del desarrollo de mis videojuegos. Desde la concepción de la idea inicial hasta el pulido final de la jugabilidad y la atmósfera, invierto mi tiempo y dedicación en ofrecer experiencias memorables y sólidas.
                     </p>
                 </div>
-                <div class="pt-4 border-t border-white/10 flex items-center space-x-4 text-sm text-slate-400">
-                    <span><i class="fa-solid fa-location-dot text-indigo-400 mr-1"></i> México</span>
-                    <span><i class="fa-solid fa-shield-halved text-indigo-400 mr-1"></i> 100% Independiente</span>
+                <div class="pt-4 border-t flex items-center space-x-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    <span><i class="fa-solid fa-location-dot text-indigo-500 mr-1"></i> México</span>
+                    <span><i class="fa-solid fa-shield-halved text-indigo-500 mr-1"></i> 100% Independiente</span>
                 </div>
             </div>
 
             <div class="custom-card p-8 rounded-2xl flex flex-col justify-between fade-in-up delay-2">
                 <div>
-                    <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-500 flex items-center justify-center text-xl mb-6">
                         <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
-                    <h2 class="text-2xl font-bold mb-4">Herramientas Principales</h2>
-                    <p class="text-slate-300 leading-relaxed mb-6">
+                    <h2 class="text-2xl font-bold mb-4" style="color: var(--text-main);">Herramientas Principales</h2>
+                    <p class="leading-relaxed mb-6" style="color: var(--text-muted);">
                         Para materializar mis proyectos utilizo software potente y versátil que me permite mantener un flujo de trabajo eficiente y de alta calidad técnica:
                     </p>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="p-4 rounded-xl border border-white/10 bg-white/5 flex items-center space-x-3">
-                            <i class="fa-solid fa-cube text-2xl text-cyan-400"></i>
+                        <div class="p-4 rounded-xl border bg-white/5 flex items-center space-x-3" style="border-color: var(--border-color);">
+                            <i class="fa-solid fa-cube text-2xl text-cyan-500"></i>
                             <div>
-                                <h3 class="font-semibold text-sm">Godot Engine</h3>
-                                <p class="text-xs text-slate-400">Motor 2D y 3D</p>
+                                <h3 class="font-semibold text-sm" style="color: var(--text-main);">Godot Engine</h3>
+                                <p class="text-xs" style="color: var(--text-muted);">Motor 2D y 3D</p>
                             </div>
                         </div>
-                        <div class="p-4 rounded-xl border border-white/10 bg-white/5 flex items-center space-x-3">
-                            <i class="fa-solid fa-shapes text-2xl text-orange-400"></i>
+                        <div class="p-4 rounded-xl border bg-white/5 flex items-center space-x-3" style="border-color: var(--border-color);">
+                            <i class="fa-solid fa-shapes text-2xl text-orange-500"></i>
                             <div>
-                                <h3 class="font-semibold text-sm">Blender</h3>
-                                <p class="text-xs text-slate-400">Modelado y Animacion.</p>
+                                <h3 class="font-semibold text-sm" style="color: var(--text-main);">Blender</h3>
+                                <p class="text-xs" style="color: var(--text-muted);">Modelado y Animación</p>
                             </div>
                         </div>
                     </div>
@@ -353,8 +303,8 @@
         <!-- Sección de Redes Sociales -->
         <section class="fade-in-up delay-3 text-center space-y-8">
             <div class="max-w-xl mx-auto">
-                <h2 class="text-3xl font-bold mb-3">Sígueme en mis Redes</h2>
-                <p class="text-slate-300 text-sm">Sigo de cerca el avance de mis proyectos y comparto actualizaciones constantes en mis canales oficiales.</p>
+                <h2 class="text-3xl font-bold mb-3" style="color: var(--text-main);">Sígueme en mis Redes</h2>
+                <p class="text-sm" style="color: var(--text-muted);">Sigo de cerca el avance de mis proyectos y comparto actualizaciones constantes en mis canales oficiales.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <a href="https://www.instagram.com/krhorkos3dstudioand2d/" target="_blank" rel="noopener noreferrer" class="custom-card p-6 rounded-2xl flex items-center space-x-4 group">
@@ -362,8 +312,8 @@
                         <i class="fa-brands fa-instagram"></i>
                     </div>
                     <div class="text-left">
-                        <h3 class="font-bold text-sm">Instagram</h3>
-                        <p class="text-xs text-slate-400">Galería</p>
+                        <h3 class="font-bold text-sm" style="color: var(--text-main);">Instagram</h3>
+                        <p class="text-xs" style="color: var(--text-muted);">Galería</p>
                     </div>
                 </a>
 
@@ -372,8 +322,8 @@
                         <i class="fa-brands fa-x-twitter"></i>
                     </div>
                     <div class="text-left">
-                        <h3 class="font-bold text-sm">X (Twitter)</h3>
-                        <p class="text-xs text-slate-400">DevBlogs</p>
+                        <h3 class="font-bold text-sm" style="color: var(--text-main);">X (Twitter)</h3>
+                        <p class="text-xs" style="color: var(--text-muted);">DevBlogs</p>
                     </div>
                 </a>
 
@@ -382,8 +332,8 @@
                         <i class="fa-brands fa-youtube"></i>
                     </div>
                     <div class="text-left">
-                        <h3 class="font-bold text-sm">YouTube</h3>
-                        <p class="text-xs text-slate-400">Devlogs</p>
+                        <h3 class="font-bold text-sm" style="color: var(--text-main);">YouTube</h3>
+                        <p class="text-xs" style="color: var(--text-muted);">Devlogs</p>
                     </div>
                 </a>
 
@@ -392,8 +342,8 @@
                         <i class="fa-brands fa-itch-io"></i>
                     </div>
                     <div class="text-left">
-                        <h3 class="font-bold text-sm">Itch.io</h3>
-                        <p class="text-xs text-slate-400">Juegos y Assets</p>
+                        <h3 class="font-bold text-sm" style="color: var(--text-main);">Itch.io</h3>
+                        <p class="text-xs" style="color: var(--text-muted);">Juegos y Assets</p>
                     </div>
                 </a>
             </div>
@@ -401,12 +351,12 @@
 
         <!-- Sección de Contacto -->
         <section id="contacto" class="custom-card p-8 sm:p-12 rounded-3xl max-w-3xl mx-auto text-center space-y-6 fade-in-up delay-4">
-            <h2 class="text-3xl font-bold">Ponte en Contacto</h2>
-            <p class="text-slate-300 text-sm max-w-lg mx-auto">
+            <h2 class="text-3xl font-bold" style="color: var(--text-main);">Ponte en Contacto</h2>
+            <p class="text-sm max-w-lg mx-auto" style="color: var(--text-muted);">
                 ¿Tienes alguna consulta sobre mi trabajo, propuestas o simplemente quieres saludar? Escríbeme directamente a mi correo electrónico.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-                <div class="px-5 py-3 rounded-xl border border-white/10 bg-black/20 text-sm font-mono tracking-wide select-all">
+                <div class="px-5 py-3 rounded-xl border bg-black/5 text-sm font-mono tracking-wide select-all" style="border-color: var(--border-color); color: var(--text-main);">
                     krhorkos3dstudioand2@gmail.com
                 </div>
                 <button onclick="copiarCorreo()" class="custom-btn px-6 py-3 rounded-xl font-medium text-sm flex items-center space-x-2 shadow-lg">
@@ -414,7 +364,7 @@
                     <span id="btnCopiarTexto">Copiar Correo</span>
                 </button>
             </div>
-            <div id="mensajeCopiado" class="hidden text-xs text-emerald-400 font-medium transition-all duration-300">
+            <div id="mensajeCopiado" class="hidden text-xs text-emerald-500 font-medium transition-all duration-300">
                 ¡Correo copiado al portapapeles con éxito!
             </div>
         </section>
@@ -422,25 +372,20 @@
     </main>
 
     <!-- Pie de Página -->
-    <footer class="border-t border-white/10 mt-20 py-8 text-center text-sm text-slate-400" style="background-color: var(--card-bg);">
+    <footer class="border-t mt-20 py-8 text-center text-sm" style="background-color: var(--card-bg); border-color: var(--border-color); color: var(--text-muted);">
         <div class="max-w-7xl mx-auto px-4 space-y-3">
             <p>© <span id="anioActual"></span> Krhorkos3DStudioAnd2D. Todos los derechos reservados.</p>
-            <p class="text-xs text-slate-500">Diseñado y desarrollado en solitario desde México.</p>
+            <p class="text-xs">Diseñado y desarrollado en solitario desde México.</p>
         </div>
     </footer>
 
     <script>
-
         const STORAGE_KEY = 'krhorkos_selected_theme';
+
         function cambiarTema(nombreTema) {
             const temasDisponibles = [
                 'theme-dark', 
-                'theme-light', 
-                'theme-grayscale', 
-                'theme-creative', 
-                'theme-earth', 
-                'theme-tech', 
-                'theme-neon'
+                'theme-light'
             ];
 
             temasDisponibles.forEach(tema => {
@@ -470,7 +415,7 @@
             let temaGuardado = 'theme-dark';
             try {
                 const guardado = localStorage.getItem(STORAGE_KEY);
-                if (guardado) {
+                if (guardado && (guardado === 'theme-dark' || guardado === 'theme-light')) {
                     temaGuardado = guardado;
                 }
             } catch (error) {
