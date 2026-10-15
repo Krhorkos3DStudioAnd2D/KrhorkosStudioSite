@@ -51,7 +51,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Definición de temas personalizados (Modo Oscuro y Modo Claro mejorado) */
         :root {
             --bg-gradient: linear-gradient(135deg, #090d16 0%, #111827 100%);
             --card-bg: rgba(17, 24, 39, 0.75);
@@ -115,7 +114,6 @@
             transform: scale(1.03);
         }
 
-        /* Fondo con animación suave */
         .animated-bg-circles {
             position: fixed;
             top: 0;
@@ -157,7 +155,6 @@
             100% { transform: translate(-30px, 50px) scale(0.95); }
         }
 
-        /* Animaciones de entrada */
         .fade-in-up {
             animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
@@ -199,15 +196,19 @@
             <!-- Botones de Navegación y Selector de Temas -->
             <div class="flex items-center space-x-2 sm:space-x-4">
                 <nav class="hidden md:flex items-center space-x-2">
-                    <a href="noticias.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5" style="border-color: var(--border-color); color: var(--text-main);">
+                    <a href="colaboracion.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5 hover:bg-white/5" style="border-color: var(--border-color); color: var(--text-main);">
+                        <i class="fa-solid fa-handshake text-indigo-500"></i>
+                        <span>Colaboraciones</span>
+                    </a>
+                    <a href="noticias.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5 hover:bg-white/5" style="border-color: var(--border-color); color: var(--text-main);">
                         <i class="fa-solid fa-newspaper text-indigo-500"></i>
                         <span>Noticias</span>
                     </a>
-                    <a href="devblogs.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5" style="border-color: var(--border-color); color: var(--text-main);">
+                    <a href="devblogs.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5 hover:bg-white/5" style="border-color: var(--border-color); color: var(--text-main);">
                         <i class="fa-solid fa-code text-indigo-500"></i>
                         <span>Devblogs</span>
                     </a>
-                    <a href="fundador.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5" style="border-color: var(--border-color); color: var(--text-main);">
+                    <a href="fundador.html" class="px-3 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-1.5 hover:bg-white/5" style="border-color: var(--border-color); color: var(--text-main);">
                         <i class="fa-solid fa-user-tie text-indigo-500"></i>
                         <span>Sobre el Fundador</span>
                     </a>
@@ -223,7 +224,8 @@
             </div>
         </div>
         <!-- Navegación móvil rápida -->
-        <div class="md:hidden flex justify-center space-x-2 py-2 border-t bg-black/5" style="border-color: var(--border-color);">
+        <div class="md:hidden flex justify-center flex-wrap gap-1.5 py-2 px-2 border-t bg-black/5" style="border-color: var(--border-color);">
+            <a href="colaboracion.html" class="text-xs font-medium px-2.5 py-1 rounded border" style="border-color: var(--border-color); color: var(--text-main);">🤝 Colaboraciones</a>
             <a href="noticias.html" class="text-xs font-medium px-2.5 py-1 rounded border" style="border-color: var(--border-color); color: var(--text-main);">Noticias</a>
             <a href="devblogs.html" class="text-xs font-medium px-2.5 py-1 rounded border" style="border-color: var(--border-color); color: var(--text-main);">Devblogs</a>
             <a href="fundador.html" class="text-xs font-medium px-2.5 py-1 rounded border" style="border-color: var(--border-color); color: var(--text-main);">Fundador</a>
@@ -305,7 +307,7 @@
         <section class="fade-in-up delay-3 text-center space-y-8">
             <div class="max-w-xl mx-auto">
                 <h2 class="text-3xl font-bold mb-3" style="color: var(--text-main);">Sígueme en mis Redes</h2>
-                <p class="text-sm" style="color: var(--text-muted);">Sigo de cerca el avance de mis proyectos y comparto actualizaciones constantes en mis canales oficiales.</p>
+                <p class="text-sm" style="color: var(--text-muted);">Sigue de cerca el avance de mis proyectos y comparto actualizaciones constantes en mis redes oficiales.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <a href="https://www.instagram.com/krhorkos3dstudioand2d/" target="_blank" rel="noopener noreferrer" class="custom-card p-6 rounded-2xl flex items-center space-x-4 group">
@@ -358,7 +360,7 @@
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
                 <div class="px-5 py-3 rounded-xl border bg-black/5 text-sm font-mono tracking-wide select-all" style="border-color: var(--border-color); color: var(--text-main);">
-                    krhorkos3dstudioand2@gmail.com
+                    krhorkos3dstudioand2d@gmail.com
                 </div>
                 <button onclick="copiarCorreo()" class="custom-btn px-6 py-3 rounded-xl font-medium text-sm flex items-center space-x-2 shadow-lg">
                     <i class="fa-solid fa-copy"></i>
@@ -427,7 +429,7 @@
         });
 
         function copiarCorreo() {
-            const correo = "krhorkos3dstudioand2@gmail.com";
+            const correo = "krhorkos3dstudioand2d@gmail.com";
             
             const textarea = document.createElement("textarea");
             textarea.value = correo;
@@ -458,3 +460,4 @@
     </script>
 </body>
 </html>
+```[cite: 1]
