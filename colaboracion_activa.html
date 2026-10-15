@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es-MX" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboración Activa | Krhorkos3DStudioAnd2D</title>
+    <link rel="icon" type="image/png" href="LOGO.png">
+    <link rel="apple-touch-icon" href="LOGO.png">
+    <meta name="author" content="Krhorkos3DStudioAnd2D">
+    <meta name="language" content="es-MX">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #090d16 0%, #111827 100%);
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.theme-dark {
+            --bg-gradient: linear-gradient(135deg, #090d16 0%, #111827 100%);
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.theme-light {
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-main: #0f172a;
+            --text-muted: #334155;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: rgba(15, 23, 42, 0.15);
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            transition: background 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        .custom-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent-color);
+        }
+
+        .animated-bg-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+            animation: floatCircle 20s infinite alternate ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            top: -100px;
+            left: -100px;
+            animation-duration: 25s;
+        }
+
+        .circle:nth-child(2) {
+            width: 600px;
+            height: 600px;
+            bottom: -150px;
+            right: -150px;
+            animation-duration: 30s;
+            animation-delay: -5s;
+        }
+
+        @keyframes floatCircle {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, 80px) scale(1.1); }
+            100% { transform: translate(-30px, 50px) scale(0.95); }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="theme-dark">
+
+    <div class="animated-bg-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- Header con botón para regresar al inicio -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-opacity-80 border-b" style="background-color: var(--card-bg); border-color: var(--border-color);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden shadow-lg border group-hover:border-indigo-500 transition-colors" style="border-color: var(--border-color);">
+                        <img src="LOGO.png" alt="Logo Krhorkos3DStudioAnd2D" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-wide block group-hover:text-indigo-500 transition-colors" style="color: var(--text-main);">Krhorkos3DStudioAnd2D</span>
+                        <span class="text-xs block" style="color: var(--text-muted);">Colaboración Activa</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <a href="index.html" class="px-3.5 py-2 rounded-lg text-sm font-medium border transition-all duration-300 flex items-center space-x-2 hover:bg-white/5" style="border-color: var(--border-color); color: var(--text-main);">
+                    <i class="fa-solid fa-arrow-left text-indigo-500"></i>
+                    <span>Volver al Inicio</span>
+                </a>
+
+                <!-- Selector de Temas -->
+                <div class="relative">
+                    <select id="themeSelector" onchange="cambiarTema(this.value)" class="px-3 py-2 rounded-lg text-sm font-medium border bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer" style="border-color: var(--border-color); color: var(--text-main);">
+                        <option value="theme-dark" class="bg-slate-900 text-white">Modo Oscuro</option>
+                        <option value="theme-light" class="bg-slate-100 text-slate-900">Modo Claro</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
+        
+        <!-- Título principal -->
+        <section class="text-center space-y-4 fade-in-up">
+            <div class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase border bg-white/5 mb-2" style="border-color: var(--border-color); color: var(--text-muted);">
+                Gestión de Proyectos
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                🤝 Colaboración Activa
+            </h1>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg leading-relaxed" style="color: var(--text-muted);">
+                Registro general de los datos de la empresa y estatus actual de la colaboración en curso.
+            </p>
+        </section>
+
+        <!-- Sección de Campos / Encabezados -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in-up delay-1">
+            
+            <!-- 1. NOMBRE DE LA EMPRESA -->
+            <div class="custom-card p-6 rounded-2xl space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 block"><i class="fa-solid fa-building mr-1"></i> Detalle</span>
+                <h3 class="text-lg font-bold tracking-wide" style="color: var(--text-main);">NOMBRE DE LA EMPRESA</h3>
+                <div class="h-12 border border-dashed rounded-xl bg-black/5 flex items-center px-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    [Espacio reservado]
+                </div>
+            </div>
+
+            <!-- 2. SITIO WEB -->
+            <div class="custom-card p-6 rounded-2xl space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 block"><i class="fa-solid fa-globe mr-1"></i> Detalle</span>
+                <h3 class="text-lg font-bold tracking-wide" style="color: var(--text-main);">SITIO WEB</h3>
+                <div class="h-12 border border-dashed rounded-xl bg-black/5 flex items-center px-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    [Espacio reservado]
+                </div>
+            </div>
+
+            <!-- 3. CORREO ELECTRÓNICO -->
+            <div class="custom-card p-6 rounded-2xl space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 block"><i class="fa-solid fa-envelope mr-1"></i> Detalle</span>
+                <h3 class="text-lg font-bold tracking-wide" style="color: var(--text-main);">CORREO ELECTRÓNICO</h3>
+                <div class="h-12 border border-dashed rounded-xl bg-black/5 flex items-center px-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    [Espacio reservado]
+                </div>
+            </div>
+
+            <!-- 4. SEDE PRINCIPAL -->
+            <div class="custom-card p-6 rounded-2xl space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 block"><i class="fa-solid fa-location-dot mr-1"></i> Detalle</span>
+                <h3 class="text-lg font-bold tracking-wide" style="color: var(--text-main);">SEDE PRINCIPAL</h3>
+                <div class="h-12 border border-dashed rounded-xl bg-black/5 flex items-center px-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    [Espacio reservado]
+                </div>
+            </div>
+
+            <!-- 5. ALCANCE -->
+            <div class="custom-card p-6 rounded-2xl space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 block"><i class="fa-solid fa-bullseye mr-1"></i> Detalle</span>
+                <h3 class="text-lg font-bold tracking-wide" style="color: var(--text-main);">ALCANCE</h3>
+                <div class="h-12 border border-dashed rounded-xl bg-black/5 flex items-center px-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    [Espacio reservado]
+                </div>
+            </div>
+
+            <!-- 6. CLIENTES DE LA EMPRESA -->
+            <div class="custom-card p-6 rounded-2xl space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 block"><i class="fa-solid fa-users mr-1"></i> Detalle</span>
+                <h3 class="text-lg font-bold tracking-wide" style="color: var(--text-main);">CLIENTES DE LA EMPRESA</h3>
+                <div class="h-12 border border-dashed rounded-xl bg-black/5 flex items-center px-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    [Espacio reservado]
+                </div>
+            </div>
+
+            <!-- 7. SOCIOS -->
+            <div class="custom-card p-6 rounded-2xl space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 block"><i class="fa-solid fa-handshake mr-1"></i> Detalle</span>
+                <h3 class="text-lg font-bold tracking-wide" style="color: var(--text-main);">SOCIOS</h3>
+                <div class="h-12 border border-dashed rounded-xl bg-black/5 flex items-center px-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    [Espacio reservado]
+                </div>
+            </div>
+
+            <!-- 8. ESTADO DEL PROYECTO -->
+            <div class="custom-card p-6 rounded-2xl space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 block"><i class="fa-solid fa-spinner mr-1"></i> Detalle</span>
+                <h3 class="text-lg font-bold tracking-wide" style="color: var(--text-main);">ESTADO DEL PROYECTO</h3>
+                <div class="h-12 border border-dashed rounded-xl bg-black/5 flex items-center px-4 text-sm" style="border-color: var(--border-color); color: var(--text-muted);">
+                    [Espacio reservado]
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="border-t mt-20 py-8 text-center text-sm" style="background-color: var(--card-bg); border-color: var(--border-color); color: var(--text-muted);">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p>© <span id="anioActual"></span> Krhorkos3DStudioAnd2D. Todos los derechos reservados.</p>
+            <p class="text-xs">Diseñado y desarrollado en solitario desde México.</p>
+        </div>
+    </footer>
+
+    <script>
+        const STORAGE_KEY = 'krhorkos_selected_theme';
+
+        function cambiarTema(nombreTema) {
+            const temasDisponibles = ['theme-dark', 'theme-light'];
+
+            temasDisponibles.forEach(tema => {
+                document.body.classList.remove(tema);
+            });
+
+            document.body.classList.add(nombreTema);
+
+            try {
+                localStorage.setItem(STORAGE_KEY, nombreTema);
+            } catch (error) {
+                console.error("No se pudo guardar la preferencia de tema en localStorage:", error);
+            }
+
+            const selector = document.getElementById('themeSelector');
+            if (selector && selector.value !== nombreTema) {
+                selector.value = nombreTema;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const anioSpan = document.getElementById('anioActual');
+            if (anioSpan) {
+                anioSpan.textContent = new Date().getFullYear();
+            }
+
+            let temaGuardado = 'theme-dark';
+            try {
+                const guardado = localStorage.getItem(STORAGE_KEY);
+                if (guardado && (guardado === 'theme-dark' || guardado === 'theme-light')) {
+                    temaGuardado = guardado;
+                }
+            } catch (error) {
+                console.error("Error al leer localStorage:", error);
+            }
+
+            cambiarTema(temaGuardado);
+        });
+    </script>
+</body>
+</html>
