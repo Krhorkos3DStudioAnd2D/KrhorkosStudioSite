@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Archivos | Krhorkos3DStudioAnd2D</title>
+    <meta name="description" content="Sección de archivos oficiales de Krhorkos3DStudioAnd2D. Descarga documentos, recursos y material del estudio independiente desde México.">
+    <meta name="keywords" content="archivos, descargas, Krhorkos3DStudioAnd2D, PDF, recursos, documentos, estudio indie, México">
+    <meta name="author" content="Krhorkos3DStudioAnd2D">
+    <meta name="theme-color" content="#0c0a14">
+    <link rel="icon" type="image/png" href="LOGO.png">
+    <link rel="apple-touch-icon" href="LOGO.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0c0a14;
+            --panel: #14111f;
+            --panel-2: #1b1729;
+            --line: #2a2540;
+            --text: #f1eefb;
+            --muted: #9d97b8;
+            --violet: #8f7bff;
+            --violet-deep: #6f5af0;
+            --mint: #5eead4;
+            --display: 'Syne', 'Segoe UI', sans-serif;
+            --body: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+            --ease: cubic-bezier(.22, .8, .3, 1);
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(46rem 28rem at 12% -8%, rgba(143, 123, 255, .22), transparent 70%),
+                radial-gradient(40rem 26rem at 100% 30%, rgba(94, 234, 212, .08), transparent 70%);
+        }
+        a { color: inherit; text-decoration: none; }
+        h1, h2, h3, p, dl, dd { margin: 0; }
+        h1, h2, h3 { font-family: var(--display); letter-spacing: -0.02em; line-height: 1.12; }
+        strong { color: var(--text); font-weight: 600; }
+        :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; border-radius: 8px; }
+        .wrap { width: min(860px, 100% - 2.5rem); margin-inline: auto; }
+        .wrap-wide { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(12, 10, 20, .72);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s ease;
+        }
+        .header.scrolled { border-bottom-color: var(--line); }
+        .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 76px; }
+        .brand { display: flex; align-items: center; gap: .75rem; min-width: 0; }
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            flex: none;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            transition: transform .4s var(--ease), border-color .3s ease;
+        }
+        .brand:hover .brand-logo { transform: rotate(-7deg) scale(1.07); border-color: var(--violet); }
+        .brand-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .brand-name { font-family: var(--display); font-weight: 700; font-size: 1.02rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .nav { display: flex; align-items: center; gap: .2rem; }
+        .nav a.link {
+            position: relative;
+            padding: .55rem .85rem;
+            border-radius: 10px;
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--muted);
+            transition: color .25s ease, background-color .25s ease;
+        }
+        .nav a.link::after {
+            content: "";
+            position: absolute;
+            left: .85rem;
+            right: .85rem;
+            bottom: .28rem;
+            height: 2px;
+            border-radius: 2px;
+            background: var(--violet);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s var(--ease);
+        }
+        .nav a.link:hover, .nav a.link[aria-current="page"] { color: var(--text); background: var(--panel); }
+        .nav a.link:hover::after, .nav a.link[aria-current="page"]::after { transform: scaleX(1); }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            padding: .8rem 1.5rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font: 700 .92rem var(--body);
+            cursor: pointer;
+            transition: transform .3s var(--ease), box-shadow .3s ease, background-color .25s ease, border-color .25s ease;
+        }
+        .btn:active { transform: scale(.97); }
+        .btn-solid { background: var(--violet); color: #0c0a14; box-shadow: 0 14px 28px -16px var(--violet); }
+        .btn-solid::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, .4) 50%, transparent 70%);
+            transform: translateX(-120%);
+            transition: transform .7s var(--ease);
+        }
+        .btn-solid:hover { transform: translateY(-2px); background: var(--violet-deep); color: #fff; box-shadow: 0 20px 32px -16px var(--violet); }
+        .btn-solid:hover::after { transform: translateX(120%); }
+        .btn-files { padding: .6rem 1.1rem; font-size: .85rem; letter-spacing: .06em; border-color: var(--mint); color: var(--mint); background: rgba(94, 234, 212, .08); margin-left: .5rem; }
+        .btn-files:hover { transform: translateY(-2px); background: var(--mint); color: #08110f; box-shadow: 0 14px 26px -14px var(--mint); }
+        .btn-files[aria-current="page"] { background: var(--mint); color: #08110f; }
+
+        .burger {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            color: var(--text);
+            cursor: pointer;
+            transition: border-color .25s ease, transform .2s ease;
+        }
+        .burger:hover { border-color: var(--violet); }
+        .burger:active { transform: scale(.94); }
+
+        .intro { padding: 4.5rem 0 2rem; }
+        .intro-top { display: flex; align-items: center; gap: 1.8rem; }
+        .intro-top > * { animation: rise .9s var(--ease) both; }
+        .intro-top > :nth-child(2) { animation-delay: .1s; }
+        @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+        .portrait {
+            width: 112px;
+            height: 112px;
+            flex: none;
+            padding: 5px;
+            border-radius: 28px;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            box-shadow: 0 24px 40px -26px var(--violet);
+            transition: transform .5s var(--ease), border-color .3s ease;
+        }
+        .portrait:hover { transform: rotate(-4deg) scale(1.04); border-color: var(--violet); }
+        .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 22px; }
+        .intro h1 { font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 800; }
+        .intro .sub { margin-top: .7rem; font-family: var(--display); font-size: 1.1rem; font-weight: 600; color: var(--violet); }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            margin-top: 2rem;
+            animation: rise .9s .15s var(--ease) both;
+        }
+        .filter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .55rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            color: var(--muted);
+            font: 600 .88rem var(--body);
+            cursor: pointer;
+            transition: transform .3s var(--ease), border-color .25s ease, background-color .25s ease, color .25s ease, box-shadow .25s ease;
+        }
+        .filter-btn:hover { transform: translateY(-2px); border-color: var(--violet); color: var(--text); background: var(--panel-2); }
+        .filter-btn:active { transform: scale(.97); }
+        .filter-btn.active {
+            background: var(--violet);
+            border-color: var(--violet);
+            color: #0c0a14;
+            box-shadow: 0 14px 26px -14px var(--violet);
+        }
+        .filter-btn.active:hover { background: var(--violet-deep); border-color: var(--violet-deep); color: #fff; }
+        .filter-btn i { font-size: .8rem; }
+
+        .files-section { padding: 1.5rem 0 3.5rem; }
+        .files-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+        .file-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            padding: 1.8rem;
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            transition: border-color .35s ease, transform .4s var(--ease), box-shadow .4s ease, opacity .3s ease;
+            animation: rise .8s var(--ease) both;
+        }
+        .file-card:hover {
+            border-color: rgba(143, 123, 255, .6);
+            transform: translateY(-5px);
+            box-shadow: 0 30px 50px -32px rgba(0, 0, 0, .85);
+        }
+        .file-card.is-hidden { display: none; }
+        .file-top { display: flex; align-items: center; gap: .9rem; }
+        .file-ico {
+            width: 48px;
+            height: 48px;
+            flex: none;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: rgba(143, 123, 255, .14);
+            color: var(--violet);
+            font-size: 1.3rem;
+            transition: transform .4s var(--ease), background-color .3s ease, color .3s ease;
+        }
+        .file-card:hover .file-ico { transform: rotate(-8deg) scale(1.08); background: var(--violet); color: #0c0a14; }
+        .file-title { font-family: var(--display); font-size: 1.18rem; font-weight: 700; line-height: 1.25; }
+        .file-desc { color: var(--muted); font-size: .93rem; }
+
+        .file-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-top: .2rem;
+        }
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .35rem .75rem;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--panel-2);
+            font-size: .78rem;
+            font-weight: 600;
+            color: var(--muted);
+            transition: border-color .25s ease, color .25s ease;
+        }
+        .meta-tag i { font-size: .72rem; }
+        .meta-tag.pdf { color: var(--mint); border-color: rgba(94, 234, 212, .3); background: rgba(94, 234, 212, .07); }
+        .file-card:hover .meta-tag { border-color: rgba(143, 123, 255, .35); }
+
+        .file-actions { margin-top: auto; padding-top: .4rem; }
+        .btn-download {
+            width: 100%;
+            padding: .85rem 1.4rem;
+            font-size: .9rem;
+        }
+
+        .empty-state {
+            display: none;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-radius: 24px;
+            border: 1px dashed var(--line);
+            background: var(--panel);
+            color: var(--muted);
+            animation: rise .5s var(--ease) both;
+        }
+        .empty-state.visible { display: block; }
+        .empty-state i { font-size: 2rem; color: var(--violet); margin-bottom: .8rem; display: block; }
+        .empty-state p { font-size: .95rem; }
+
+        .footer { padding: 2.2rem 0; border-top: 1px solid var(--line); text-align: center; font-size: .9rem; color: var(--muted); }
+        .footer .btn { margin-top: 1.2rem; }
+
+        @media (min-width: 640px) {
+            .files-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .files-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 1024px) {
+            .burger { display: inline-grid; place-items: center; }
+            .nav {
+                position: absolute;
+                top: 76px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: .2rem;
+                padding: 0 1.25rem;
+                background: rgba(12, 10, 20, .96);
+                -webkit-backdrop-filter: blur(16px);
+                backdrop-filter: blur(16px);
+                border-bottom: 1px solid var(--line);
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition: max-height .45s var(--ease), opacity .3s ease, padding .3s ease, visibility .3s;
+            }
+            .nav.open { max-height: 480px; opacity: 1; visibility: visible; padding: .8rem 1.25rem 1.2rem; }
+            .nav a.link { padding: .8rem .9rem; }
+            .nav a.link::after { display: none; }
+            .btn-files { margin: .5rem 0 0; }
+        }
+        @media (max-width: 640px) {
+            .intro { padding-top: 3rem; }
+            .intro-top { flex-direction: column; align-items: flex-start; }
+            .file-card { padding: 1.5rem; }
+            .footer .btn { width: 100%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="wrap-wide bar">
+            <a href="index.html" class="brand" aria-label="Krhorkos3DStudioAnd2D, inicio">
+                <span class="brand-logo"><img src="LOGO.png" alt="Logo de Krhorkos3DStudioAnd2D"></span>
+                <span class="brand-name">Krhorkos3DStudioAnd2D</span>
+            </a>
+            <nav class="nav" id="nav" aria-label="Navegación principal">
+                <a href="colaboracion.html" class="link">Colaboraciones</a>
+                <a href="colaboracion_activa.html" class="link">Colaboración Activa</a>
+                <a href="noticias.html" class="link">Noticias</a>
+                <a href="devblogs.html" class="link">Devblogs</a>
+                <a href="fundador.html" class="link">Fundador</a>
+                <a href="index.html#redes" class="link">Redes</a>
+                <a href="archivos.html" class="btn btn-files" aria-current="page"><i class="fa-solid fa-folder-open"></i><span>ARCHIVOS</span></a>
+            </nav>
+            <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+                <i class="fa-solid fa-bars" id="burgerIcon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap intro">
+            <div class="intro-top">
+                <div class="portrait"><img src="LOGO.png" alt="Logo de Krhorkos3DStudioAnd2D"></div>
+                <div>
+                    <h1>Archivos del Estudio</h1>
+                    <p class="sub">Documentos y recursos oficiales de Krhorkos3DStudioAnd2D</p>
+                </div>
+            </div>
+            <div class="filters" role="group" aria-label="Filtrar archivos por formato">
+                <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
+                    <i class="fa-solid fa-layer-group"></i><span>Todos</span>
+                </button>
+                <button type="button" class="filter-btn" data-filter="pdf" aria-pressed="false">
+                    <i class="fa-solid fa-file-pdf"></i><span>PDF</span>
+                </button>
+                <button type="button" class="filter-btn" data-filter="imagen" aria-pressed="false">
+                    <i class="fa-solid fa-image"></i><span>Imágenes</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="wrap-wide files-section">
+            <div class="files-grid" id="filesGrid">
+                <article class="file-card" data-type="pdf">
+                    <div class="file-top">
+                        <span class="file-ico"><i class="fa-solid fa-file-pdf"></i></span>
+                        <h2 class="file-title">Krhorkos3DStudioAnd2D - PORTAFOLIO</h2>
+                    </div>
+                    <p class="file-desc">Conoce mi marca, mi trabajo y lo que hago en Krhorkos3DStudioAnd2D.</p>
+                    <div class="file-meta">
+                        <span class="meta-tag"><i class="fa-regular fa-calendar"></i> 21/11/2026</span>
+                        <span class="meta-tag pdf"><i class="fa-solid fa-file-pdf"></i> PDF</span>
+                    </div>
+                    <div class="file-actions">
+                        <a href="archivos/portafolio.pdf" download class="btn btn-solid btn-download">
+                            <i class="fa-solid fa-download"></i><span>Descargar Archivo</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="empty-state" id="emptyState">
+                <i class="fa-solid fa-folder-open"></i>
+                <p>No hay archivos disponibles en este formato por el momento.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap-wide">
+            <p>© <span id="year"></span> Krhorkos3DStudioAnd2D. Todos los derechos reservados.</p>
+            <a href="index.html" class="btn btn-solid"><i class="fa-solid fa-arrow-left"></i><span>Volver al inicio</span></a>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var header = document.getElementById('header');
+            var nav = document.getElementById('nav');
+            var burger = document.getElementById('burger');
+            var icon = document.getElementById('burgerIcon');
+            var filesGrid = document.getElementById('filesGrid');
+            var emptyState = document.getElementById('emptyState');
+            var filterButtons = document.querySelectorAll('.filter-btn');
+            var cards = filesGrid.querySelectorAll('.file-card');
+
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            function onScroll() {
+                header.classList.toggle('scrolled', window.scrollY > 8);
+            }
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            function setMenu(open) {
+                nav.classList.toggle('open', open);
+                burger.setAttribute('aria-expanded', String(open));
+                burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+                icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+            }
+            burger.addEventListener('click', function () {
+                setMenu(!nav.classList.contains('open'));
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () { setMenu(false); });
+            });
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 1024) setMenu(false);
+            });
+
+            function applyFilter(filter) {
+                var visibleCount = 0;
+                cards.forEach(function (card) {
+                    var type = card.getAttribute('data-type');
+                    var show = filter === 'all' || filter === type;
+                    card.classList.toggle('is-hidden', !show);
+                    if (show) visibleCount++;
+                });
+                emptyState.classList.toggle('visible', visibleCount === 0);
+
+                filterButtons.forEach(function (btn) {
+                    var isActive = btn.getAttribute('data-filter') === filter;
+                    btn.classList.toggle('active', isActive);
+                    btn.setAttribute('aria-pressed', String(isActive));
+                });
+            }
+
+            filterButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    applyFilter(btn.getAttribute('data-filter'));
+                });
+            });
+
+            applyFilter('all');
+        })();
+    </script>
+</body>
+</html>
